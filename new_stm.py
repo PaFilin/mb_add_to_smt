@@ -44,7 +44,7 @@ from pymodbus.transaction import (ModbusRtuFramer,
                                   ModbusAsciiFramer,
                                   ModbusBinaryFramer)
 
-from .test_md import MB_Dict
+from .dict_for_mb import MB_Dict
 
 
 
