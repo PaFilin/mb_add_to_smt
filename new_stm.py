@@ -492,18 +492,18 @@ def updating_writer():
 
 
     register = 3
-    slave_id = 0x00
+    slave_id = 0x01
     address  = 0x01
     values = []
     for key in MB_Dict:
         try:
             values.append(int(can_parser.can_data[MB_Dict[key]]))
         except:
+            print(f"Problem with {key}")
             values.append(0)
             pass 
                 
-    context[slave_id].setValues(register, address, values)
-    log.debug(f"new values: {values} ")    
+    context[slave_id].setValues(register, address, values)  
 #    
 #    for key in can_parser.can_data:
 #        print(f"Key {key} has value {can_parser.can_data[key]}")
