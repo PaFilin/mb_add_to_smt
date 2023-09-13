@@ -529,10 +529,7 @@ def updating_writer():
 async def add_mb_async_server():
     global context
     store = ModbusSlaveContext(
-        di=ModbusSequentialDataBlock(0, [17]*100),
-        co=ModbusSequentialDataBlock(0, [17]*100),
-        hr=ModbusSequentialDataBlock(0, [17]*100),
-        ir=ModbusSequentialDataBlock(0, [17]*100))
+        hr=ModbusSequentialDataBlock(0, [0]*111))
     
     context = ModbusServerContext(slaves=store, single=True)
         
@@ -542,7 +539,7 @@ async def add_mb_async_server():
     identity.VendorUrl = ''
     identity.ProductName = 'E.Charger'
     identity.ModelName = 'Pymodbus Server'
-    identity.MajorMinorRevision = "1.2.3"
+    identity.MajorMinorRevision = "1.0.0"
     
     address=("0.0.0.0", 502)
     
